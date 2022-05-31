@@ -1,0 +1,30 @@
+* {
+    flex-wrap: wrap; 
+}
+
+header {
+    display: flex;
+    background-color:blanchedalmond;
+    
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header li, a, p {
+    font-size: 25px;
+    color: magenta;
+    text-decoration: none;
+    list-style: none;
+}
+
+header p {
+    justify-content: right;
+}
+
+quiz {
+    color: blue;
+}
