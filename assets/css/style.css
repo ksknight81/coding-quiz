@@ -1,30 +1,40 @@
-* {
-    flex-wrap: wrap; 
-}
+
 
 header {
     display: flex;
-    background-color:blanchedalmond;
-    
+    background-color:blanchedalmond;    
 }
 
-header nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-header li, a, p {
+header li, header a {
     font-size: 25px;
     color: magenta;
     text-decoration: none;
-    list-style: none;
+    display:inline;
+}
+
+header div {
+    display: inline;
+    text-align: right;
 }
 
 header p {
     justify-content: right;
 }
 
-quiz {
-    color: blue;
+.quizBox {
+    display: flex;
+    background-color: blue;
+    
+    
+}
+
+.questionBox {
+    text-align: center;
+    background-color: green;
+    color: pink
+}
+.answerBox {
+    color: pink;
+    justify-content: center;
+    text-align: center;
 }
