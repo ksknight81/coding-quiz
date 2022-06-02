@@ -45,7 +45,7 @@ section {
   border-color: var(--backprimarycolor);
   color: var(--backprimarycolor);
   /* Hides submit button on the screen */
-  display: none;    
+
 }
 
 /* start the game button */
@@ -64,7 +64,7 @@ section {
   padding: 2px;
   width: 120px;
 /* hides from view*/
-  display: none;
+
 }
 
 .quiz, .choices {
@@ -72,5 +72,8 @@ section {
   font-size: 24px;
   padding: 5px;
   width: auto;
-  display: none;
+
+}
+#quiz, #end {
+  display:none;
 }
