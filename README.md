@@ -11,3 +11,4 @@ The Coding Quiz challenge is used to create a quiz using JavaScript to power the
 
 Repository URL:  https://github.com/ksknight81/coding-quiz
 Published Website URL: https://ksknight81.github.io/coding-quiz/
+![alt tag](https://github.com/ksknight81/coding-quiz/blob/main/assets/Quiz%20Image.png)
