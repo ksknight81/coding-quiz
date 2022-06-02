@@ -1,6 +1,6 @@
 // select all elements
 var start = document.getElementById("startbtn");
-const quiz = document.getElementById("quiz");
+//const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
@@ -79,30 +79,25 @@ var playAgain = function (){
     textInput.style.display = "none";
     startQuiz();
 };
-
-
-
     
-// variables
+// variables used to calculate how many questions are left
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
-
 // question function
-
 function renderQuestion(){
         let q = questions[runningQuestion];
-        question.innerHTML = q.question ;
+        question.innerHTML = q.question;
         choiceA.innerHTML = q.choiceA;
         choiceB.innerHTML = q.choiceB;
         choiceC.innerHTML = q.choiceC;
         choiceD.innerHTML = q.choiceD;
+        console.log(choiceD)
     }
     
 //start.style.display = "none";
 
-renderQuestion();
-quiz.style.display = "block";
+//quiz.style.display = "block";
 
 //render progress
 
@@ -118,7 +113,7 @@ function checkAnswer(answer){
             score++;
         }else{
             // answer is wrong
-            answerIsWrong();
+            countDownTimer - 1000;
         }
         if(runningQuestionIndex < lastQuestionIndex){
             count = 0;
@@ -129,19 +124,15 @@ function checkAnswer(answer){
         }
     }
 
-function answerIsWrong (){
-        timer - 10000; 
-    }
 
-
+function startQuiz() {
+        startQuiz.addEventListener("click", startbtn);      
+}
     // start the game
 var startQuiz = function(){
     countDownTimer();
     renderQuestion();
 }
-function startQuiz() {
-        startQuiz.addEventListener("click", startbtn);
- 
-}
+
   
    
