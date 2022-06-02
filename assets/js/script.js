@@ -14,7 +14,7 @@
 // }
 
 // select all elements
-const start = document.getElementById("start");
+const start = document.getElementById("startbtn");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 const choiceA = document.getElementById("A");
@@ -23,8 +23,8 @@ const choiceC = document.getElementById("C");
 const choiceD = document.getElementById("D");
 
 
-
-let questions = [
+// javascript questions
+var questions = [
     {
         question: "Commonly used data types DO NOT include:",
         choiceA: "strings",
@@ -95,8 +95,8 @@ quiz.style.display = "block";
     // score calculation
     let score = 0;
 
-    // check answer function
-    function checkAnswer(answer){
+// check answer function
+function checkAnswer(answer){
         if(answer == questions[runningQuestionIndex].correct) {
             // answer is correct
             score++;
@@ -113,14 +113,15 @@ quiz.style.display = "block";
         }
     }
 
-    function answerIsWrong (){
+function answerIsWrong (){
         Timer - 10000; 
     }
 
+
     // start the game
 function startQuiz() {
-        start.addEventListener("click", startQuiz);
+        start.addEventListener("click", startbtn);
  
 }
-    startQuiz();
+  
    

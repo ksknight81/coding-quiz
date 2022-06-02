@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz</title>
+    <title>JavaScript Coding Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<header>
-    <nav>
-        <ul>
-            <li>
-                <a href="#high-score">View High Scores</a>
-            </li>
-            <div id="countdown">timeLeft</div>
-            
-        </ul>
-    </nav>
-  </header>
 <body>
     <!-- this line below shows where the questions are -->
-    <div id="start">Start The Quiz</div>
-    <div id="quiz" class="quizBox">
-        <div id="timer"></div>
-        <div id="question" class="questionBox"> <p> Question </p></div> 
-        <div id="choices" class="answerBox">
+      <section>
+            <h2 id="Question Display">Hello! Welcome to the JavaScript Quiz.</H2>
+            <p>Below you will be presented with 5 multiple choice questions to complete within 75 seconds.  Choose your answer and the next question will populate.</p>
+            <p style="color: darkmagenta">But be careful...</p><p>For every wrong question, you lose 10 seconds off the clock </p>
+            </p>
+            <button class="startbtn" id="startbtn">Click to Start!</button>
+            <div class="quiz">
+            <p class="question"></p> <!-- id="question" class="questionBox"> <p> Question </p></div> -->
+                <p class="answer" id="answer1"></p>
+                <p class="answer" id="answer2"></p>
+                <p class="answer" id="answer3"></p>
+                <p class="answer" id="answer4"></p>
+            <!--<div id="choices" class="answerBox">
                 <div class="choice" id="A" onclick="checkAnswer('A')">A</div>
                 <div class="choice" id="B" onclick="checkAnswer('B')">B</div>
                 <div class="choice" id="C" onclick="checkAnswer('C')">C</div>
-                <div class="choice" id="D" onclick="checkAnswer('D')">D</div>
-            </div>
-    </div>
+                <div class="choice" id="D" onclick="checkAnswer('D')">D</div>-->
+            
+            
+            <p id="timer"></p>
+            <form id="playerName">
+            <input type="text" name="player-name" class="text-input" id="text-input" placeholder="Enter Player Initials"/>
+            <button type="submit" class="submit-button" id="initial-submit">Submit</button>
+            </form>
+        </div>
+        </section>
     <script src="./assets/js/script.js"></script>
 </body>
 

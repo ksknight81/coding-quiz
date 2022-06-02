@@ -1,40 +1,68 @@
+/* set primary colours for the site */
 
-
-header {
-    display: flex;
-    background-color:blanchedalmond;    
+:root {
+  --primarycolor: navy;
+  --secondarycolor: blue;
+  --tertiarycolor: green;
+  --backprimarycolor: darkcyan;
+  --backsecondarycolor: lightblue;
+  --backtertiarycolor: lightgreen;
+  --backquadcolor: #f37c7c;
 }
 
-header li, header a {
-    font-size: 25px;
-    color: magenta;
-    text-decoration: none;
-    display:inline;
+/* create box for questions to appear */
+body {
+  background: var(--backprimarycolor);
+  display: flex;
+  justify-content: center;
+  height: auto;
+  padding: 40px;
+  margin: 50px;
 }
 
-header div {
-    display: inline;
-    text-align: right;
+/* Bolds the Hello message */
+section h2 {
+  color: var(--secondarycolor);
+  font-size: 40px;
 }
 
-header p {
-    justify-content: right;
+body p {
+  color: var(--primarycolor);
+  font-size: 24px;
 }
 
-.quizBox {
-    display: flex;
-    background-color: blue;
-    
-    
+/* question section box */
+section {
+  padding: 10px;
+  background: var(--backsecondarycolor);
+  text-align: center;
+  /*color: var(--secondarycolor);*/
+ }
+
+ /* high score button */
+.submit-button {
+  border-radius: 55px;  
+  border-color: var(--backprimarycolor);
+  color: var(--backprimarycolor);
+  /* Hides submit button on the screen */
+  display: none;    
 }
 
-.questionBox {
-    text-align: center;
-    background-color: green;
-    color: pink
+/* start the game button */
+.startbtn {
+  border-radius: 55px;
+  border: 2px solid;
+  border-color: var(--backprimarycolor);
+  font-size: 18px;
+  color: var(--backprimarycolor);
 }
-.answerBox {
-    color: pink;
-    justify-content: center;
-    text-align: center;
+
+/* high score name input */
+.text-input {
+  text-align: center;
+  font-size: 14px;
+  padding: 2px;
+  width: 120px;
+/* hides from view*/
+  display: none;
 }
