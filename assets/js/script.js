@@ -1,20 +1,5 @@
-
-// // timer countdown variable
-// var timeLeft = 75;
-//     var elem = document.getElementById('countdown');
-
-//     function countdownTimer(){
-//         if (timeLeft == -1) {
-//             clearTimeout(timerId);
-//             doSomething("times up");
-//         } else {
-//             elem.innerHTML = timeLeft + 'seconds remaining';
-//             timeLeft--;
-//         }
-// }
-
 // select all elements
-const start = document.getElementById("startbtn");
+var start = document.getElementById("startbtn");
 const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 const choiceA = document.getElementById("A");
@@ -66,6 +51,37 @@ var questions = [
         correct: "A"
     }
 ];
+// timer countdown variable
+var timer = document.getElementById(startbtn);
+var counter = 75;
+
+var countDownTimer = function (){
+//         
+setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+        timer.innerHTML = counter;
+    };
+    if (counter == 0) {
+        question1.textContent = "";
+        answer1.textContent = "";
+        answer2.textContent = "";
+        answer3.textContent = "";
+        answer4.textContent = "";
+    } 
+    }, 1000);
+};
+
+// restart quiz
+var playAgain = function (){
+    counter = counter * 0 + 75;
+    finalScore = finalScore * 0 + 3;
+    textInput.style.display = "none";
+    startQuiz();
+};
+
+
+
     
 // variables
 const lastQuestion = questions.length - 1;
@@ -74,10 +90,9 @@ let runningQuestion = 0;
 
 // question function
 
-
 function renderQuestion(){
         let q = questions[runningQuestion];
-        question.innerHTML = "<p>" + q.question + "</p>";
+        question.innerHTML = q.question ;
         choiceA.innerHTML = q.choiceA;
         choiceB.innerHTML = q.choiceB;
         choiceC.innerHTML = q.choiceC;
@@ -85,6 +100,7 @@ function renderQuestion(){
     }
     
 //start.style.display = "none";
+
 renderQuestion();
 quiz.style.display = "block";
 
@@ -114,13 +130,17 @@ function checkAnswer(answer){
     }
 
 function answerIsWrong (){
-        Timer - 10000; 
+        timer - 10000; 
     }
 
 
     // start the game
+var startQuiz = function(){
+    countDownTimer();
+    renderQuestion();
+}
 function startQuiz() {
-        start.addEventListener("click", startbtn);
+        startQuiz.addEventListener("click", startbtn);
  
 }
   

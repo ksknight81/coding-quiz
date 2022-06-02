@@ -10,5 +10,6 @@ The Coding Quiz challenge is used to create a quiz using JavaScript to power the
 6.  Once the game is complete, the user is allowed to save their initials and score into the high scores
 
 Repository URL:  https://github.com/ksknight81/coding-quiz
+
 Published Website URL: https://ksknight81.github.io/coding-quiz/
 ![alt tag](https://github.com/ksknight81/coding-quiz/blob/main/assets/Quiz%20Image.png)
