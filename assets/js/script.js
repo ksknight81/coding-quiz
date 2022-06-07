@@ -1,5 +1,6 @@
 // select all elements
 var start = document.querySelector("startbtn");
+var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
 //const quiz = document.getElementById("quiz");
 const question = document.getElementById("question");
 const choiceA = document.getElementById("A");
@@ -67,8 +68,8 @@ var countDownTimer = function () {
     counter--;
     timer.innerHTML = counter;
     if (counter <= 0) {
-      clearInterval(timerInterval);
-      scoreRender();
+      
+      renderScore();
     }
   }, 1000);
 };
@@ -95,14 +96,13 @@ function renderQuestion() {
   choiceD.innerHTML = q.choiceD;
 }
 
-//start.style.display = "none";
-
-//quiz.style.display = "block";
-
 //render progress
 function renderScore(){
+  clearInterval(timerInterval);
   quiz.style.display = "none";
   end.style.display = "block";
+  var finalScore = document.getElementById("finalScore");
+  finalScore.innerText = score; 
 }
 
 // score calculation
@@ -130,20 +130,21 @@ function checkAnswer(answer) {
 var startQuiz = function () {
   begin.style.display = "none";
   quiz.style.display = "block";
-  var finalScore = document.getElementById("finalScore");
-  finalScore.innerText = score; 
   countDownTimer();
-  renderQuestion();
+  renderQuestion(); 
 };
 
 startbtn.addEventListener("click", startQuiz);
-var history = JSON.parse(localStorage.getItem("history")) || []
+
 var playerName = document.getElementById("playerName");
 
 playerName.addEventListener("submit", function(event){
   event.preventDefault();
-  var initials = document.getElementById("text-input");
+  console.log(highscores.length);
+  var initials = document.getElementById("text-input").value;
   var newScore = {initials:initials, score:score};
-  history.push(newScore);
-  localStorage.setItem(JSON.stringify("history"));
+  highscores.push(newScore);
+  localStorage.setItem("highscores", JSON.stringify(highscores));
 })
+
+// can now do the part for pulling the high scores. 
